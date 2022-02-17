@@ -9,12 +9,41 @@
   </head>
   <body>
     <div id="header"></div>
+    <div id="container"></div>
   </body>
 </html>
 
 <script type="module">
   import navbar from "./components/navbar.js";
-
+  import { getData, displayRepos } from "./scripts/displayData.js";
   let header = document.getElementById("header");
   header.innerHTML = navbar();
+
+  ////////////
+
+  let searchInputElement = document.getElementById("search-input");
+  let profileImg = document.getElementById("profile-img");
+  let container = document.getElementById("container");
+
+  searchInputElement.addEventListener("keypress", fetchUserDataAndUpdate);
+
+  async function fetchUserDataAndUpdate(e) {
+    try {
+      if (e.key == "Enter") {
+        let value = searchInputElement.value;
+
+        let responseData = await getData(
+          `https://api.github.com/users/${value}`
+        );
+        profileImg.src = responseData.avatar_url;
+
+        let repoDetails = await getData(responseData.repos_url);
+        displayRepos(repoDetails, container);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  ///////////
 </script>

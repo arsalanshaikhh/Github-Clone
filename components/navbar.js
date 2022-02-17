@@ -8,7 +8,7 @@ function navbar() {
     </a>
   </div>
   <div id="search">
-    <input type="text" placeholder="Search or Jump to..." />
+    <input type="text" id="search-input" placeholder="Search or Jump to..." />
   </div>
 
   <div id="option">
@@ -25,6 +25,7 @@ function navbar() {
     <img
       src="https://www.unoreads.com/user_profile_pic/demo-user.png"
       alt=""
+      id="profile-img"
     />
   </div>`;
 }
