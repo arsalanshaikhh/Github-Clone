@@ -8,7 +8,7 @@ function navbar() {
     </a>
   </div>
   <div id="search">
-    <input type="text" id="search-input" placeholder="Search or Jump to..." />
+    <input type="text" value="coder-arsalan" id="search-input" placeholder="Search or Jump to..." />
   </div>
 
   <div id="option">

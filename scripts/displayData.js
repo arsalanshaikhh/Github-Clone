@@ -11,11 +11,18 @@ async function getData(url) {
 function displayRepos(repos, parentContainer) {
   repos.forEach((repo) => {
     let repoCard = document.createElement("div");
-    let id = document.createElement("p");
-    id.textContent = repo.id;
-    let repoElement = document.createElement("p");
-    repoElement.textContent = repo.full_name;
-    repoCard.append(id, repoElement);
+    repoCard.setAttribute("id", "card");
+    let visibility = document.createElement("p");
+    visibility.textContent = repo.visibility;
+    visibility.setAttribute("id", "vis");
+    let lang = document.createElement("p");
+    lang.innerHTML = repo.language;
+    lang.setAttribute("class", "lang");
+
+    let repoElement = document.createElement("h3");
+    repoElement.textContent = repo.name;
+    repoElement.setAttribute("class", "he");
+    repoCard.append(repoElement, visibility, lang);
     parentContainer.append(repoCard);
   });
 }
