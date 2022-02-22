@@ -86,8 +86,9 @@ a {
   width: 90%;
 }
 
-#profile {
+#profile2 {
   flex: 4;
+  height: auto;
 }
 
 #container {
@@ -98,6 +99,7 @@ a {
 
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin-top: 50px;
 }
 #container > #card {
   width: 40%;
@@ -119,6 +121,8 @@ a {
   width: 20%;
   display: flex;
   justify-content: flex-end;
+  text-transform: capitalize;
+
   /* margin-right: 5px; */
 }
 
@@ -128,3 +132,7 @@ a {
   justify-content: flex-start;
   /* margin: 5px; */
 }
+
+/* #profile2 {
+  background-color: aqua;
+} */

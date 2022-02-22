@@ -10,7 +10,9 @@
   <body>
     <div id="header"></div>
     <div id="con">
-      <div id="profile"></div>
+      <div id="profile2">
+        <img src="pimg" alt="" />
+      </div>
       <div id="container"></div>
     </div>
   </body>
@@ -27,6 +29,7 @@
   let searchInputElement = document.getElementById("search-input");
   let profileImg = document.getElementById("profile-img");
   let container = document.getElementById("container");
+  // let pimge = document.getElementById("pimg");
 
   searchInputElement.addEventListener("keypress", fetchUserDataAndUpdate);
 
@@ -39,7 +42,7 @@
           `https://api.github.com/users/${value}`
         );
         profileImg.src = responseData.avatar_url;
-
+        // pimge.src = responseData.avatar_url;
         let repoDetails = await getData(responseData.repos_url);
         displayRepos(repoDetails, container);
       }
